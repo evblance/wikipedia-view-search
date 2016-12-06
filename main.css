@@ -1,0 +1,130 @@
+body {
+  background-color: #323C7F;
+  color: #B1BBFF;
+}
+
+h1 {
+  font-family: 'Philospher', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  display: block;
+  margin-top: 4em;
+  margin-bottom: 2em;
+  transition: 1s;
+}
+
+a:link {
+  /*color: #6577FF;*/
+  color: #B1BBFF;
+  text-decoration: none;
+}
+
+form {
+  display: inline-block;
+  margin: auto;
+}
+
+i.glyphicon {
+  font-size: 2em;
+}
+
+div#search-field-tool {
+  text-align: center;
+}
+
+#search-field {
+  font-size: 2em;
+  background-color: #323C7F;
+  width: 0px;
+  padding-left: -1em;
+  border: none;
+  margin-left: 0.5em;
+  display: inline-block;
+  transition: all 1s;
+}
+
+#search-icon {
+  cursor: pointer;
+  display: inline-block;
+}
+
+.left-padded {
+  padding-left: 2em;
+}
+
+#svg-search-line {
+  text-align: center;
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  width: 80px;
+  height: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 1s;
+}
+/*
+#random-icon {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 0em;
+  margin-bottom: 0em;
+}
+*/
+
+span {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.centered {
+  margin: auto;
+  display: block;
+  text-align: center;
+}
+
+.hit-title {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+a:visited {
+  color: #B1BBFF;
+}
+
+.hit {
+  border: 2px solid #6577FF;
+  background-color: #222C6F;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  align: center;
+  display: inline-block;
+  width: 90%;
+  transition: border 0.3s;
+}
+
+.hit-noresult {
+  text-align: center;
+  font-size: 2em;
+}
+
+.hit:hover {
+  border-color: white;
+  -ms-box-shadow: 0 0 4px 2px;
+  -moz-box-shadow: 0 0 4px 2px;
+  -webkit-box-shadow: 0 0 4px 2px;
+  box-shadow: 0 0 4px 2px;
+  transition: all 0.2s;
+}
+
+#panel-wrapper {
+  width: 90%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
