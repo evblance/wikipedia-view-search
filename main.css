@@ -4,6 +4,16 @@ body {
   margin: 0 auto;
 }
 
+.left-padded {
+  padding: 0 0 0 2em;
+}
+
+.centered {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
 h1 {
   font-family: 'Philospher', sans-serif;
   font-weight: 700;
@@ -48,10 +58,6 @@ div#search-field-tool {
   display: inline-block;
 }
 
-.left-padded {
-  padding: 0 0 0 2em;
-}
-
 #svg-search-line {
   display: block;
   width: 80px;
@@ -77,11 +83,6 @@ span {
   text-align: center;
 }
 
-.centered {
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-}
 
 .hit-title {
   font-size: 1.5em;
@@ -99,7 +100,7 @@ a:visited {
   background-color: #222C6F;
   margin: 7px 10%;
   padding: 0.5em;
-  text-align: center;
+  text-align: left;
   transition: border 0.3s;
 }
 
