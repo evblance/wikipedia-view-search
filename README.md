@@ -1,1 +1,2 @@
-# Wikipedia Viewer/Searcher
+# Wikipedia Searcher
+A simple Wikipedia search UI.

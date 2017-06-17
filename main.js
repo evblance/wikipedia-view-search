@@ -1,7 +1,7 @@
 var searchBox = false;
 
 function sanitizeMyQuery(query) {
-  // Capitalize the first letter of the string 
+  // Capitalize the first letter of the string
   // and replace spaces with underscores.
   var queryArray = query.split("");
   queryArray[0] = queryArray[0].toUpperCase();
@@ -23,18 +23,16 @@ function searchWiki() {
   //capitalize the first letter of each word in query and replace the spaces
   // with underscores, then add this to request.
   request += "&search=" + sanitizedQuery;
-  
+
   $.ajax({
-    type: "GET",
+    type: 'GET',
     url: request,
-    contentType: "application/json; charset=utf-8;",
-    dataType: "jsonp",
+    dataType: 'jsonp',
     success: function (wikiData) {
-      //console.log(wikiData);
-      
+
       // Clear the previous search
       $('#search-results').html("");
-      
+
       // Insert the search results
       for (var i = 0; i < wikiData[1].length; i++) {
         var resultHtml = "";
@@ -49,7 +47,7 @@ function searchWiki() {
       $('.hit').each(function(num) {
         $(this).delay(200*num).fadeIn(250);
       });
-      
+
       // If returned array is empty, notify user that no search results available
       if (wikiData[1].length == 0) {
         var errorHtml = "<div style='display:none' class='hit hit-noresult'><p>Dang! No results...but feel free to try again with a different query.</p></div>";
@@ -61,37 +59,28 @@ function searchWiki() {
       alert(e +' : Error displaying search results!');
     }
   });
-  
 
-
-  // alert(wikiJSON.query.normalized.to);
 };
 
 function showSearchBox() {
     searchBox = true;
-    $('#search-field-tool').prepend('<form id="search-form" action="javascript:searchWiki()" class="centering"><input id="search-field" type="text" name="search"/></form>');
-    $('#search-field').width(380);    
-    $('#svg-search-line').width(400);
+    $('#search-field').addClass('search-field-expanded');
+    $('#svg-search-line').addClass('search-line-extended');
     $('#search-icon').fadeOut('fast');
     changeSearchIcon('glyphicon-search', 'glyphicon-pencil');
-    
-    //$('#svg-search-line').attr('margin-top','0em');
     document.getElementById("search-field").focus();
-
 }
 
 function hideSearchBox() {
   searchBox = false;
-  $('#search-field').width(0);
-  $('#svg-search-line').width(80);
+  $('#search-field').val('');
+  $('#search-field').removeClass('search-field-expanded');
+  $('#svg-search-line').removeClass('search-line-extended');
   if ( $('#search-icon').hasClass('glyphicon-pencil') ) {
     changeSearchIcon('glyphicon-pencil', 'glyphicon-search');
   } else {
     changeSearchIcon('glyphicon-remove', 'glyphicon-search');
   }
-
-  $('#search-field').remove();
-
 }
 
 function changeSearchIcon(oldClass, newClass) {
@@ -102,33 +91,28 @@ function changeSearchIcon(oldClass, newClass) {
   searchIcon.fadeIn('fast');
 }
 
+var searchUsed = false;
 
-$(document).ready(function () {
-  
-  var searchUsed = false;
-  
-  $('body').on('keydown', '#search-field', function() {
-    console.log($('#search-icon'));
-    if ( $('#search-icon').hasClass('glyphicon-pencil') ) {
-      changeSearchIcon('glyphicon-pencil', 'glyphicon-remove');
-    }
- });
-    
-  $('#search-icon').on('click', function() {
-    if (!searchBox) {
-      showSearchBox();
-    } else {
-      hideSearchBox();
-    }
-   //  Toggle #panel-wrapper up or down
-   if (searchUsed === false ){
-      $('h1').css('margin-top','1em');
-      searchUsed = true;
-    } else {
-      $('h1').css('margin-top','4em');
-      searchUsed = false;
-    }
-    // Clear any previous search output when closing search area
-    $('#search-results').html("");
-  });
+$('body').on('keydown', '#search-field', function() {
+  if ( $('#search-icon').hasClass('glyphicon-pencil') ) {
+    changeSearchIcon('glyphicon-pencil', 'glyphicon-remove');
+  }
+});
+
+$('#search-icon').on('click', function() {
+  if (!searchBox) {
+    showSearchBox();
+  } else {
+    hideSearchBox();
+  }
+ //  Toggle #panel-wrapper up or down
+ if (searchUsed === false) {
+    $('h1').css('margin-top','1em');
+    searchUsed = true;
+  } else {
+    $('h1').css('margin-top','4em');
+    searchUsed = false;
+  }
+  // Clear any previous search output when closing search area
+  $('#search-results').html("");
 });
