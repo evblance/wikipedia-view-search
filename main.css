@@ -1,6 +1,17 @@
 body {
   background-color: #323C7F;
   color: #B1BBFF;
+  margin: 0 auto;
+}
+
+.left-padded {
+  padding: 0 0 0 2em;
+}
+
+.centered {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
 }
 
 h1 {
@@ -8,9 +19,8 @@ h1 {
   font-weight: 700;
   text-align: center;
   display: block;
-  margin-top: 4em;
-  margin-bottom: 2em;
-  transition: 1s;
+  margin: 4em 0 2em;
+  transition: all 1s;
 }
 
 a:link {
@@ -33,13 +43,13 @@ div#search-field-tool {
 }
 
 #search-field {
-  font-size: 2em;
-  background-color: #323C7F;
   width: 0px;
-  padding-left: -1em;
-  border: none;
-  margin-left: 0.5em;
+  padding: 0 0 0 -1em;
+  margin: 0 0 0 0.5em;
   display: inline-block;
+  background-color: #323C7F;
+  border: none;
+  font-size: 2em;
   transition: all 1s;
 }
 
@@ -48,19 +58,12 @@ div#search-field-tool {
   display: inline-block;
 }
 
-.left-padded {
-  padding-left: 2em;
-}
-
 #svg-search-line {
-  text-align: center;
   display: block;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
   width: 80px;
   height: 4px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0.5em auto;
+  text-align: center;
   transition: all 1s;
 }
 /*
@@ -80,11 +83,6 @@ span {
   text-align: center;
 }
 
-.centered {
-  margin: auto;
-  display: block;
-  text-align: center;
-}
 
 .hit-title {
   font-size: 1.5em;
@@ -96,16 +94,13 @@ a:visited {
 }
 
 .hit {
+  width: 90%;
+  display: inline-block;
   border: 2px solid #6577FF;
   background-color: #222C6F;
-  margin-top: 7px;
-  margin-bottom: 7px;
-  margin-left: 10%;
-  margin-right: 10%;
-  padding: 0.5em 0.5em 0.5em 0.5em;
-  align: center;
-  display: inline-block;
-  width: 90%;
+  margin: 7px 10%;
+  padding: 0.5em;
+  text-align: left;
   transition: border 0.3s;
 }
 
@@ -125,6 +120,5 @@ a:visited {
 
 #panel-wrapper {
   width: 90%;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin: 0 auto;
 }
