@@ -26,16 +26,19 @@ a:active,
 a:visited,
 a:hover,
 a:focus {
+  text-decoration: none;
   color: #b1bbff;
 }
 
-i.glyphicon {
-  font-size: 2em;
+p {
+  margin: 0;
+  padding: 2px;
+  font-family: 'Spectral', serif;
 }
 
 .random-link {
   display: block;
-  margin: 15px auto;
+  margin: 1rem auto;
   text-align: center;
 }
 
@@ -54,13 +57,17 @@ i.glyphicon {
   width: 0px;
   display: inline;
   border: none;
-  font-size: 2em;
+  font-size: 1.8rem;
+  height: 3rem;
   transition: all 0.7s ease;
+  color: whitesmoke;
   background: #323c7f;
 }
 
 #search-field.search-field-expanded {
   background-color: #252d5e;
+  font-family: 'Overpass', sans-serif;
+  padding: 2px;
   width: 380px;
 }
 @media screen and (min-width: 381px) {
