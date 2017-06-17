@@ -24,6 +24,7 @@ form {
 a,
 a:active,
 a:visited,
+a:hover,
 a:focus {
   color: #b1bbff;
 }
